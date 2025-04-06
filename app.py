@@ -14,7 +14,7 @@ from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.backends import default_backend
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins=["https://umangdoshi0.github.io"])
 
 load_dotenv()
 
