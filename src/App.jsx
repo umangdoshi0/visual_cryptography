@@ -29,7 +29,8 @@ function App() {
 
     setLoadingEncrypt(true);
     try {
-      const response = await axios.post("http://localhost:5000/encrypt", formData);
+      // const response = await axios.post("http://localhost:5000/encrypt", formData);
+      const response = await axios.post("https://flask-backend-i46p.onrender.com/encrypt", formData);
       setGeneratedShares(response.data.shares);
       setFetchedShares([]); // clear previous fetch result
       setDecryptedImage(null); // clear previous decryption
@@ -48,7 +49,8 @@ function App() {
     }
     setLoadingUpload(true);
     try {
-      await axios.post("http://localhost:5000/upload", { shares: generatedShares });
+      // await axios.post("http://localhost:5000/upload", { shares: generatedShares });
+      await axios.post("https://flask-backend-i46p.onrender.com/upload", { shares: generatedShares });
       alert("Shares were successfully encrypted and uploaded to the cloud");
       setFetchedShares([]);
       setDecryptedImage(null);
@@ -81,7 +83,8 @@ function App() {
   
       setLoadingFetch(true);
       try {
-        const response = await axios.post("http://localhost:5000/fetch", {
+        // const response = await axios.post("http://localhost:5000/fetch", {
+        const response = await axios.post("https://flask-backend-i46p.onrender.com/fetch", {
           num_shares: generatedShares.length,
           aes_key: userKey,
         });
@@ -124,7 +127,8 @@ function App() {
     }
     setLoadingDecrypt(true);
     try {
-      const response = await axios.post("http://localhost:5000/decrypt", {
+      // const response = await axios.post("http://localhost:5000/decrypt", {
+      const response = await axios.post("https://flask-backend-i46p.onrender.com/decrypt", {
         shares: fetchedShares,
         num_shares: fetchedShares.length
       });
