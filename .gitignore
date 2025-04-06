@@ -7,6 +7,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Node / Vite
 node_modules
 dist-ssr
 *.local
@@ -22,4 +23,30 @@ dist-ssr
 *.sln
 *.sw?
 
-.env*
+# Environment files
+.env
+.env.*
+
+# Python / Flask
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.db
+*.sqlite3
+*.h5
+*.hdf5
+*.keras
+*.pkl
+*.joblib
+*.npy
+*.npz
+gunicorn.log
+instance/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Misc
+*.swp
